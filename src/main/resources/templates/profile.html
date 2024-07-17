@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center">Profile</h2>
+    <form th:action="@{/profile}" th:object="${user}" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" th:field="*{name}" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" th:field="*{email}" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" th:field="*{age}" placeholder="Age" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" th:field="*{gender}" placeholder="Gender" required>
+        </div>
+        <div class="form-group">
+            <input type="date" class="form-control" th:field="*{dob}" placeholder="Date of Birth" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" th:field="*{mobile}" placeholder="Mobile" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+        </div>
+    </form>
+    <a href="/logout" class="btn btn-danger btn-block">Logout</a>
+</div>
+</body>
+</html>
